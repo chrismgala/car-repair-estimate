@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import fontFamily from "tailwindcss/defaultTheme";
 
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -60,8 +60,8 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
       keyframes: {
         "accordion-down": {
@@ -79,7 +79,7 @@ const config = {
       },
     },
   },
-  plugins: ["tailwindcss/nesting"],
+  plugins: [require("tailwindcss/nesting")],
 } satisfies Config;
 
 export default config;

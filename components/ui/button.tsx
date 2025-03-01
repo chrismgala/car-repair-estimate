@@ -10,6 +10,15 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  // This is a function component that renders a button.
+  // It accepts a bunch of props, and some of them have default values.
+  // The `asChild` prop is special - it allows the consumer to pass a custom element
+  // to be used as the button. If `asChild` is true, we use the `Slot` component from
+  // `@radix-ui/react-slot` instead of a plain `button` element.
+  // The `ref` prop is also special - it's the ref that the parent component passes
+  // to this component. We'll pass it to the `Comp` component.
+  // If `asChild` is true, we use the `Slot` component.
+  // Otherwise, we use a plain `button` element.
   ({ className, variant = "default", size = "default", asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
