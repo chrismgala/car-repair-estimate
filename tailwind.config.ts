@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import fontFamily from "tailwindcss/defaultTheme";
 
 const config = {
   darkMode: "class",
@@ -79,7 +78,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss/nesting")],
+  plugins: [require("@tailwindcss/nesting")],
 } satisfies Config;
 
 export default config;
